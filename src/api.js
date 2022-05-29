@@ -13,17 +13,6 @@ const apiService = {
     });
   },
 
-  destroy(hero) {
-    return new Promise((resolve, reject) => {
-      fetch(`${baseAPI}/hero/${hero.id}`, { method: 'DELETE' })
-        .then(response => response.json())
-        .then(json => resolve(json))
-        .catch(err => {
-          reject(err);
-        });
-    });
-  },
-
   create(hero) {
     return new Promise((resolve, reject) => {
       fetch(`${baseAPI}/hero`, {
